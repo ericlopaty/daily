@@ -47,6 +47,8 @@ namespace daily
 			try
 			{
 				DateTime now = DateTime.Now;
+				if (string.Compare(Console.Title, now.ToString("hh:mm tt")) != 0)
+					Console.Title = now.ToString("hh:mm:ss tt").ToLower();
 				DateTime t0000 = new DateTime(now.Year, now.Month, now.Day);
 				DateTime t0830 = t0000.AddMinutes(510);
 				DateTime t1200 = t0000.AddMinutes(720);
